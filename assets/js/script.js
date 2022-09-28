@@ -34,6 +34,7 @@ function render() {
                 console.log(today.weather[0].icon);
                 $("#fetch").append(infoJumbo.append(day, dayOf, expCity, degree, humid, wind, icon, iconMain));
                 $("#one-day").append(jumbo);
+
                 /* Uv Index Function */
                 let latitude = today.coord.lat
                 let longtitude = today.coord.lon;
