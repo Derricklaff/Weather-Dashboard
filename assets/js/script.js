@@ -89,3 +89,22 @@ function fiveDaysApi() {
                 icon.attr("src", "http://openweathermap.org/img/wn/" + days.weather[0].icon + "@2x.png");
                 $("#fetch-five").append(cardInit.append(cardDay, degrees, icon, humidity, wind));
                 $("#five-days").append(cards);
+            }
+        })
+}
+/* City Searched history function that spawns the cities under the submit form */
+function searchedCities() {
+    $("#searched").empty();
+    for (var i = 0; i < citySearched.length; i++) {
+        var el = $("<p class='cities'>");
+        el.attr("data", citySearched[i]);
+        el.text(citySearched[i]);
+        $("#searched").append(el);
+
+    }
+
+}
+/* Click function, it saves searched cities and runs the forecast app.. */
+$("#submitBtn").on("click", function (event) {
+    event.preventDefault();
+    cityPicked = $("#given-input").val().trim();
