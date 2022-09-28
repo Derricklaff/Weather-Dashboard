@@ -108,3 +108,9 @@ function searchedCities() {
 $("#submitBtn").on("click", function (event) {
     event.preventDefault();
     cityPicked = $("#given-input").val().trim();
+    if (!citySearched.includes(cityPicked)) {
+        (citySearched).push(cityPicked);
+    }
+    if (citySearched.length > 5) {
+        citySearched.shift();
+    }
